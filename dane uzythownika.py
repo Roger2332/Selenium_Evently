@@ -1,16 +1,9 @@
 import json
-import string
-import random
 import time
 from faker import Faker
 
 start_time = time.time()
 fake = Faker()
-def generuj_losowy_ciag(dlugosc):
-    znaki = string.ascii_letters + string.digits
-    losowy_ciag = ''.join(random.choice(znaki) for _ in range(dlugosc))
-    return losowy_ciag
-
 
 dane_list = []
 
