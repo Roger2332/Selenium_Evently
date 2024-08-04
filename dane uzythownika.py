@@ -2,9 +2,10 @@ import json
 import string
 import random
 import time
+from faker import Faker
 
 start_time = time.time()
-
+fake = Faker()
 def generuj_losowy_ciag(dlugosc):
     znaki = string.ascii_letters + string.digits
     losowy_ciag = ''.join(random.choice(znaki) for _ in range(dlugosc))
@@ -13,13 +14,13 @@ def generuj_losowy_ciag(dlugosc):
 
 dane_list = []
 
-for i in range(100000):
+for i in range(100):
     data = {
-        "First_name": generuj_losowy_ciag(30),
-        "Last_name": generuj_losowy_ciag(30),
-        "Username": generuj_losowy_ciag(30),
-        "Email": f"{generuj_losowy_ciag(30)}@gmail.com",
-        "Password": generuj_losowy_ciag(30)
+        "First_name": fake.first_name(),
+        "Last_name": fake.last_name(),
+        "Username": fake.user_name(),
+        "Email": fake.email(),
+        "Password": fake.password()
     }
     dane_list.append(data)
 
